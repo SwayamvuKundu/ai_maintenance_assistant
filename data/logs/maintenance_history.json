@@ -1,0 +1,252 @@
+{
+  "maintenance_history": [
+
+    {
+      "history_id": "MH-CNC-2025-001",
+      "asset_id": "CNC-001",
+      "asset_name": "CNC Vertical Milling Machine",
+      "category": "CNC",
+      "maintenance_type": "Emergency Breakdown",
+      "priority": "Critical",
+      "failure_date_time": "2025-12-02T07:40:00",
+      "reported_by": "Shift Operator - Line A",
+      "production_shift": "Night Shift",
+      "machine_runtime_hours_at_failure": 12458,
+
+      "symptoms_observed": [
+        "High spindle vibration alarm",
+        "Burning smell near spindle housing",
+        "Surface finish deviation on machined part",
+        "Abnormal noise above 6000 RPM"
+      ],
+
+      "sensor_data_before_failure": {
+        "spindle_vibration_mm_per_sec": 6.8,
+        "normal_range": "0–3 mm/s",
+        "spindle_temperature_celsius": 78,
+        "normal_temperature_range": "35–60°C",
+        "lubrication_flow_rate_lpm": 0.6,
+        "required_flow_rate_lpm": "1.2–1.5"
+      },
+
+      "diagnosis": {
+        "initial_inspection": "Severe spindle bearing wear",
+        "detailed_findings": [
+          "Outer race pitting",
+          "Lubrication starvation",
+          "Minor shaft scoring"
+        ],
+        "root_cause_analysis": {
+          "primary_cause": "Automatic lubrication cycle malfunction",
+          "contributing_factor": "Missed preventive inspection in previous cycle",
+          "why_analysis": [
+            "Lubrication pump filter clogged",
+            "Filter replacement not logged in last PM",
+            "Spare filter stock unavailable",
+            "Procurement delay of 14 days"
+          ]
+        }
+      },
+
+      "corrective_actions_taken": [
+        "Complete spindle assembly removal",
+        "Replaced bearing set",
+        "Replaced lubrication pump filter",
+        "Flushed lubrication lines",
+        "Re-calibrated spindle alignment",
+        "Performed trial machining test"
+      ],
+
+      "parts_used": [
+        {
+          "part_name": "Spindle Bearing Set",
+          "part_number": "BR-SP-7788",
+          "quantity": 2,
+          "unit_cost": 450,
+          "total_cost": 900
+        },
+        {
+          "part_name": "Lubrication Pump Filter",
+          "part_number": "LPF-200",
+          "quantity": 1,
+          "unit_cost": 85,
+          "total_cost": 85
+        }
+      ],
+
+      "labor_details": [
+        {
+          "technician_name": "Suresh Patel",
+          "role": "Mechanical Lead",
+          "hours_worked": 6,
+          "hourly_rate": 40,
+          "labor_cost": 240
+        },
+        {
+          "technician_name": "Anita Sharma",
+          "role": "Electrical Support",
+          "hours_worked": 2,
+          "hourly_rate": 35,
+          "labor_cost": 70
+        }
+      ],
+
+      "total_labor_cost": 310,
+      "total_material_cost": 985,
+      "external_service_cost": 0,
+      "total_cost": 1295,
+
+      "downtime_analysis": {
+        "total_downtime_hours": 7.5,
+        "mean_time_to_repair_hours": 6.8,
+        "production_loss_units": 120,
+        "estimated_production_loss_value": 4800
+      },
+
+      "safety_report": {
+        "incident_occurred": false,
+        "lockout_tagout_followed": true,
+        "ppe_compliance": true
+      },
+
+      "quality_verification": {
+        "trial_run_duration_minutes": 45,
+        "dimension_accuracy_result": "Within tolerance",
+        "surface_finish_result": "Acceptable",
+        "qa_approved_by": "Quality Supervisor"
+      },
+
+      "preventive_action_recommendation": [
+        "Implement lubrication flow sensor alarm",
+        "Maintain minimum stock level for critical filters",
+        "Add lubrication inspection to weekly checklist"
+      ],
+
+      "maintenance_completed_date": "2025-12-02T15:10:00",
+      "maintenance_status": "Closed"
+    },
+
+    {
+      "history_id": "MH-INJ-2025-002",
+      "asset_id": "INJ-003",
+      "asset_name": "Injection Molding Machine",
+      "category": "Injection Molding",
+      "maintenance_type": "Predictive Maintenance",
+      "triggered_by": "Hydraulic temperature threshold exceeded",
+      "alert_timestamp": "2025-11-18T14:10:00",
+
+      "sensor_trend_analysis": {
+        "temperature_trend_last_24h": "Gradual increase from 62°C to 76°C",
+        "pressure_fluctuation": "±15 bar variation",
+        "vibration_reading_mm_per_sec": 4.1
+      },
+
+      "inspection_findings": [
+        "Hydraulic oil contamination detected",
+        "Seal wear in main pump",
+        "Partial blockage in oil cooler"
+      ],
+
+      "root_cause_analysis": {
+        "primary_cause": "Oil contamination due to degraded filter element",
+        "secondary_cause": "Oil cooler fin clogging with dust"
+      },
+
+      "actions_taken": [
+        "Replaced hydraulic oil filter",
+        "Cleaned oil cooler fins",
+        "Replaced pump seal kit",
+        "Flushed hydraulic system",
+        "Refilled with ISO VG 46 oil"
+      ],
+
+      "oil_analysis_report": {
+        "iso_cleanliness_code_before": "22/20/17",
+        "iso_cleanliness_code_after": "17/15/12",
+        "moisture_content_ppm": 150
+      },
+
+      "parts_used": [
+        {
+          "part_name": "Hydraulic Filter Cartridge",
+          "quantity": 1,
+          "unit_cost": 120,
+          "total_cost": 120
+        },
+        {
+          "part_name": "Seal Kit",
+          "quantity": 1,
+          "unit_cost": 210,
+          "total_cost": 210
+        }
+      ],
+
+      "labor_hours_total": 5.5,
+      "downtime_hours": 4,
+      "total_cost": 780,
+
+      "production_impact": {
+        "delayed_orders": 2,
+        "units_lost": 350,
+        "loss_value": 5600
+      },
+
+      "verification_results": {
+        "hydraulic_temperature_after_repair": "58°C",
+        "pressure_stability": "Stable ±5 bar",
+        "trial_cycles_completed": 100
+      },
+
+      "maintenance_completed_date": "2025-11-19T18:30:00",
+      "status": "Closed"
+    },
+
+    {
+      "history_id": "MH-VFD-2025-003",
+      "asset_id": "VFD-007",
+      "asset_name": "Main Drive VFD Panel",
+      "category": "VFD",
+      "maintenance_type": "Corrective",
+      "issue_reported": "Intermittent drive trip - Overcurrent fault",
+      "failure_time": "2025-10-05T09:15:00",
+
+      "fault_code": "OC-02",
+      "initial_observation": "Drive tripping at high load during peak production",
+
+      "electrical_measurements": {
+        "input_voltage": "415V ±2%",
+        "output_current_peak": "180A",
+        "rated_current": "150A",
+        "harmonic_distortion_percent": 11.5
+      },
+
+      "diagnosis": [
+        "Cooling fan failure",
+        "Capacitor degradation",
+        "Dust accumulation causing overheating"
+      ],
+
+      "corrective_actions": [
+        "Replaced cooling fan assembly",
+        "Replaced DC bus capacitors",
+        "Vacuum cleaned internal panel",
+        "Tightened power terminals",
+        "Updated firmware to v3.2.1"
+      ],
+
+      "downtime_hours": 3.2,
+      "mttr_hours": 2.9,
+      "total_cost": 540,
+
+      "recommendations": [
+        "Install harmonic filter",
+        "Quarterly capacitor ESR testing",
+        "Install panel temperature monitoring sensor"
+      ],
+
+      "maintenance_completed_date": "2025-10-05T13:20:00",
+      "status": "Closed"
+    }
+
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "maintenance_records": [
+    {
+      "record_id": "MR-CNC-001",
+      "asset_id": "CNC-001",
+      "asset_name": "CNC Vertical Milling Machine",
+      "asset_category": "CNC",
+      "maintenance_plan_type": "Preventive",
+      "maintenance_strategy": "Time-Based",
+      "frequency": {
+        "interval_value": 30,
+        "interval_unit": "Days"
+      },
+      "criticality": "High",
+      "risk_level": "Severe Production Impact",
+      "standard_operating_procedure_reference": "SOP-CNC-PRV-01",
+      "safety_requirements": {
+        "lockout_tagout_required": true,
+        "ppe_required": [
+          "Safety Gloves",
+          "Safety Glasses",
+          "Steel Toe Shoes"
+        ],
+        "permit_required": false
+      },
+      "detailed_checklist": [
+        {
+          "task_id": "T1",
+          "description": "Inspect spindle lubrication system",
+          "inspection_method": "Visual + Flow Rate Check",
+          "acceptable_range": "Oil flow 1.2–1.5 L/min",
+          "estimated_time_minutes": 30
+        },
+        {
+          "task_id": "T2",
+          "description": "Check coolant concentration",
+          "inspection_method": "Refractometer",
+          "acceptable_range": "6–8%",
+          "estimated_time_minutes": 20
+        },
+        {
+          "task_id": "T3",
+          "description": "Inspect ball screws and guideways",
+          "inspection_method": "Manual + Dial Indicator",
+          "acceptable_range": "Backlash < 0.01 mm",
+          "estimated_time_minutes": 40
+        },
+        {
+          "task_id": "T4",
+          "description": "Clean electrical cabinet and inspect terminals",
+          "inspection_method": "Thermal Scan + Visual",
+          "acceptable_range": "No loose terminals, Temp < 45°C",
+          "estimated_time_minutes": 45
+        }
+      ],
+      "required_tools": [
+        "Dial Indicator",
+        "Thermal Camera",
+        "Refractometer",
+        "Torque Wrench",
+        "Multimeter"
+      ],
+      "required_consumables": [
+        {
+          "name": "ISO VG 68 Lubrication Oil",
+          "estimated_quantity": "2 Liters"
+        },
+        {
+          "name": "Coolant Concentrate",
+          "estimated_quantity": "1 Liter"
+        }
+      ],
+      "estimated_labor_hours": 4,
+      "estimated_downtime_hours": 3.5,
+      "estimated_total_cost": {
+        "labor_cost": 240,
+        "material_cost": 120,
+        "total_estimated": 360
+      },
+      "last_completed_date": "2025-11-30",
+      "next_due_date": "2025-12-30",
+      "approval_workflow": {
+        "prepared_by": "Maintenance Planner",
+        "approved_by": "Maintenance Manager",
+        "approval_status": "Approved"
+      }
+    },
+
+    {
+      "record_id": "MR-INJ-002",
+      "asset_id": "INJ-003",
+      "asset_name": "Injection Molding Machine",
+      "asset_category": "Injection Molding",
+      "maintenance_plan_type": "Predictive",
+      "maintenance_strategy": "Condition-Based",
+      "monitoring_parameters": [
+        {
+          "parameter": "Hydraulic Oil Temperature",
+          "warning_level": "70°C",
+          "critical_level": "80°C"
+        },
+        {
+          "parameter": "Hydraulic Pressure",
+          "warning_level": "180 bar",
+          "critical_level": "200 bar"
+        },
+        {
+          "parameter": "Vibration",
+          "warning_level": "3.5 mm/s",
+          "critical_level": "5 mm/s"
+        }
+      ],
+      "trigger_conditions": "Maintenance initiated when any parameter exceeds warning level for 10 minutes continuously",
+      "inspection_tasks": [
+        {
+          "task_id": "T1",
+          "description": "Collect hydraulic oil sample for contamination analysis",
+          "test_method": "ISO 4406 Cleanliness Test",
+          "acceptable_range": "18/16/13 or better"
+        },
+        {
+          "task_id": "T2",
+          "description": "Inspect hydraulic pump seals",
+          "inspection_method": "Visual + Pressure Test"
+        },
+        {
+          "task_id": "T3",
+          "description": "Check mold clamping unit alignment",
+          "inspection_method": "Laser Alignment Tool"
+        }
+      ],
+      "estimated_labor_hours": 5,
+      "estimated_downtime_hours": 4,
+      "estimated_total_cost": {
+        "labor_cost": 400,
+        "diagnostic_cost": 150,
+        "material_cost": 200,
+        "total_estimated": 750
+      },
+      "last_condition_triggered": "2025-11-18",
+      "last_completed_date": "2025-11-19",
+      "next_review_date": "2025-12-19",
+      "approval_status": "Active"
+    },
+
+    {
+      "record_id": "MR-VFD-003",
+      "asset_id": "VFD-007",
+      "asset_name": "Main Drive VFD Panel",
+      "asset_category": "VFD",
+      "maintenance_plan_type": "Preventive",
+      "maintenance_strategy": "Quarterly",
+      "frequency": {
+        "interval_value": 90,
+        "interval_unit": "Days"
+      },
+      "risk_category": "Electrical Failure Risk",
+      "detailed_checklist": [
+        {
+          "task_id": "T1",
+          "description": "Inspect cooling fans operation",
+          "inspection_method": "Operational Test",
+          "acceptable_condition": "No abnormal noise, RPM stable"
+        },
+        {
+          "task_id": "T2",
+          "description": "Check capacitor health",
+          "inspection_method": "Capacitance Meter",
+          "acceptable_range": "±5% of rated value"
+        },
+        {
+          "task_id": "T3",
+          "description": "Tighten terminal connections",
+          "inspection_method": "Torque Check",
+          "acceptable_range": "As per manufacturer torque chart"
+        },
+        {
+          "task_id": "T4",
+          "description": "Check harmonic distortion",
+          "inspection_method": "Power Quality Analyzer",
+          "acceptable_range": "THD < 8%"
+        }
+      ],
+      "safety_requirements": {
+        "lockout_tagout_required": true,
+        "arc_flash_category": "Category 2",
+        "minimum_safe_distance": "1 meter"
+      },
+      "estimated_labor_hours": 3,
+      "estimated_downtime_hours": 2,
+      "estimated_total_cost": {
+        "labor_cost": 180,
+        "spare_cost_estimate": 100,
+        "total_estimated": 280
+      },
+      "last_completed_date": "2025-10-15",
+      "next_due_date": "2026-01-15",
+      "status": "Scheduled"
+    },
+
+    {
+      "record_id": "MR-PUMP-004",
+      "asset_id": "HYD-PUMP-004",
+      "asset_name": "Hydraulic Industrial Pump",
+      "asset_category": "Hydraulic System",
+      "maintenance_plan_type": "Annual Overhaul",
+      "maintenance_strategy": "Time-Based",
+      "frequency": {
+        "interval_value": 12,
+        "interval_unit": "Months"
+      },
+      "major_overhaul_scope": [
+        "Complete pump disassembly",
+        "Impeller inspection and replacement if worn",
+        "Seal replacement",
+        "Bearing replacement",
+        "Housing inspection for cracks",
+        "Shaft alignment verification"
+      ],
+      "replacement_parts_planned": [
+        {
+          "part_name": "Mechanical Seal Kit",
+          "quantity": 1
+        },
+        {
+          "part_name": "Bearing Set",
+          "quantity": 2
+        },
+        {
+          "part_name": "Gasket Kit",
+          "quantity": 1
+        }
+      ],
+      "estimated_labor_hours": 12,
+      "estimated_downtime_hours": 10,
+      "estimated_total_cost": {
+        "labor_cost": 960,
+        "spare_parts_cost": 850,
+        "total_estimated": 1810
+      },
+      "last_completed_date": "2025-02-10",
+      "next_due_date": "2026-02-10",
+      "approval_status": "Approved",
+      "budget_allocated": true
+    }
+  ]
+}

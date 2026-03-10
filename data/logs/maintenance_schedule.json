@@ -1,0 +1,292 @@
+{
+  "plant_maintenance_master_schedule": {
+    "plant_name": "ABC Precision Manufacturing Plant",
+    "calendar_year": 2026,
+    "maintenance_strategy": "Reliability Centered Maintenance (RCM)",
+    "shift_pattern": "24/7 - 3 Shift Operation",
+
+    "assets_covered": [
+      "CNC-001",
+      "CONV-002",
+      "COOL-003",
+      "ELEC-PNL-004",
+      "MOTOR-005",
+      "HYD-PUMP-006",
+      "INJ-007",
+      "PNEU-008",
+      "SAFE-009",
+      "VFD-010"
+    ],
+
+    "schedules": [
+
+      {
+        "asset_id": "CNC-001",
+        "asset_name": "CNC Vertical Milling Machine",
+        "criticality": "High",
+        "maintenance_program": {
+
+          "daily_tasks": {
+            "frequency": "Every Shift",
+            "estimated_time_minutes": 25,
+            "responsible_role": "Operator",
+            "tasks": [
+              "Check coolant level and refill if below 70%",
+              "Inspect spindle sound at idle and 5000 RPM",
+              "Check lubrication system pressure gauge",
+              "Clean chip conveyor and machine bed",
+              "Verify emergency stop functionality"
+            ]
+          },
+
+          "weekly_tasks": {
+            "frequency": "Every 7 Days",
+            "estimated_time_hours": 1.5,
+            "responsible_team": "Mechanical Maintenance",
+            "tasks": [
+              "Check axis backlash using dial indicator",
+              "Inspect way covers for damage",
+              "Inspect lubrication lines for leakage",
+              "Check hydraulic pressure stability",
+              "Test safety door interlock switches"
+            ]
+          },
+
+          "monthly_tasks": {
+            "frequency": "30 Days",
+            "planned_downtime_hours": 3,
+            "tasks": [
+              "Clean electrical cabinet filters",
+              "Thermal scan of electrical panel",
+              "Check spindle runout (<0.005 mm)",
+              "Inspect ball screws and linear guides",
+              "Coolant concentration testing (6-8%)",
+              "Test UPS backup power"
+            ],
+            "required_spares_preplanned": [
+              "Lubrication Oil 2L",
+              "Coolant Concentrate 1L"
+            ]
+          },
+
+          "quarterly_tasks": {
+            "frequency": "90 Days",
+            "planned_downtime_hours": 4,
+            "tasks": [
+              "Laser alignment verification",
+              "Servo motor inspection",
+              "Encoder signal verification",
+              "Inspect tool changer mechanism",
+              "Electrical torque tightening audit"
+            ]
+          },
+
+          "annual_overhaul": {
+            "frequency": "12 Months",
+            "planned_shutdown_days": 2,
+            "tasks": [
+              "Complete spindle inspection",
+              "Replace critical bearings",
+              "Replace lubrication filters",
+              "Control cabinet deep cleaning",
+              "Firmware update",
+              "Full machine geometric calibration"
+            ],
+            "estimated_budget": 2500
+          }
+        }
+      },
+
+      {
+        "asset_id": "HYD-PUMP-006",
+        "asset_name": "Hydraulic Industrial Pump",
+        "criticality": "High",
+        "maintenance_program": {
+
+          "condition_based_monitoring": {
+            "monitored_parameters": [
+              {
+                "parameter": "Vibration",
+                "warning_level": "4.0 mm/s",
+                "critical_level": "6.0 mm/s"
+              },
+              {
+                "parameter": "Oil Temperature",
+                "warning_level": "70°C",
+                "critical_level": "85°C"
+              }
+            ],
+            "sensor_type": "IoT Vibration + Temp Sensor",
+            "monitoring_interval": "Every 5 Minutes",
+            "auto_work_order_trigger": true
+          },
+
+          "weekly_tasks": {
+            "tasks": [
+              "Check oil level and refill",
+              "Inspect for seal leakage",
+              "Check suction and discharge pressure",
+              "Inspect coupling alignment visually"
+            ]
+          },
+
+          "monthly_tasks": {
+            "planned_downtime_hours": 2,
+            "tasks": [
+              "Oil sample collection for lab analysis",
+              "Check bearing temperature using IR gun",
+              "Inspect motor insulation resistance (>1 MΩ)",
+              "Clean suction strainer"
+            ]
+          },
+
+          "semi_annual_tasks": {
+            "planned_downtime_hours": 5,
+            "tasks": [
+              "Replace oil filter",
+              "Check shaft alignment using dial gauge",
+              "Inspect impeller wear",
+              "Replace worn seals if required"
+            ]
+          },
+
+          "annual_overhaul": {
+            "planned_shutdown_days": 1,
+            "tasks": [
+              "Full pump disassembly",
+              "Replace bearing set",
+              "Replace mechanical seal",
+              "Housing crack inspection",
+              "Pressure performance testing"
+            ]
+          }
+        }
+      },
+
+      {
+        "asset_id": "VFD-010",
+        "asset_name": "Main Drive Variable Frequency Drive",
+        "criticality": "High",
+        "maintenance_program": {
+
+          "monthly_tasks": {
+            "tasks": [
+              "Check cooling fan operation",
+              "Inspect capacitor health",
+              "Check DC bus voltage stability",
+              "Thermal imaging scan",
+              "Check harmonic distortion (<8%)"
+            ]
+          },
+
+          "quarterly_tasks": {
+            "planned_downtime_hours": 2,
+            "tasks": [
+              "Clean internal dust accumulation",
+              "Tighten terminal connections",
+              "Test overcurrent trip function",
+              "Firmware version validation"
+            ]
+          },
+
+          "annual_tasks": {
+            "planned_downtime_hours": 4,
+            "tasks": [
+              "Capacitor ESR testing",
+              "Cooling fan replacement",
+              "Full insulation resistance test",
+              "Arc flash risk assessment review"
+            ]
+          }
+        }
+      },
+
+      {
+        "asset_id": "CONV-002",
+        "asset_name": "Assembly Conveyor Belt",
+        "criticality": "Medium",
+        "maintenance_program": {
+
+          "daily_visual_check": [
+            "Check belt tracking",
+            "Check abnormal noise",
+            "Inspect roller rotation",
+            "Check emergency pull cord"
+          ],
+
+          "weekly_tasks": [
+            "Lubricate bearings",
+            "Check motor current draw",
+            "Inspect belt tension",
+            "Check gear reducer oil level"
+          ],
+
+          "monthly_tasks": [
+            "Alignment check",
+            "Replace worn rollers if required",
+            "Inspect frame structure for cracks",
+            "Safety guard inspection"
+          ]
+        }
+      },
+
+      {
+        "asset_id": "SAFE-009",
+        "asset_name": "Plant Safety System",
+        "criticality": "Very High",
+        "compliance_reference": "ISO 45001",
+        "maintenance_program": {
+
+          "weekly_tasks": [
+            "Test emergency stop circuits",
+            "Check fire alarm functionality",
+            "Inspect safety light curtains",
+            "Verify alarm siren output"
+          ],
+
+          "monthly_tasks": [
+            "Test emergency lighting battery backup",
+            "Inspect fire extinguishers pressure gauge",
+            "Test safety PLC diagnostics"
+          ],
+
+          "annual_tasks": [
+            "Full evacuation drill",
+            "Third-party safety audit",
+            "Safety system firmware validation"
+          ]
+        }
+      }
+
+    ],
+
+    "shutdown_master_plan": {
+      "annual_major_shutdown": {
+        "scheduled_month": "July",
+        "total_days": 5,
+        "assets_included": [
+          "CNC-001",
+          "HYD-PUMP-006",
+          "INJ-007",
+          "VFD-010",
+          "ELEC-PNL-004"
+        ],
+        "activities": [
+          "Major overhaul",
+          "Electrical system audit",
+          "Hydraulic system flushing",
+          "Control panel cleaning",
+          "Safety compliance inspection"
+        ],
+        "estimated_total_budget": 25000
+      }
+    },
+
+    "kpi_targets": {
+      "target_mtbf_hours": 1500,
+      "target_mttr_hours": 4,
+      "planned_maintenance_ratio_percent": 85,
+      "downtime_target_percent": 2
+    }
+  }
+}
