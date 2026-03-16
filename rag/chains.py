@@ -15,9 +15,10 @@ def format_docs(documents):
 def run_rag(query: str, memory=None):
     if memory is None:
         memory=[]
-    documents=retrieve_documents(query)
-    context=format_docs(documents)
+    
     memory_text=format_memory(memory)
+    documents=retrieve_documents(query,memory_text)
+    context=format_docs(documents)
     prompt=RAG_PROMPT.format(context=context,question=query,memory=memory_text)
     client=get_client()
     response=client.models.generate_content(model=LLM_MODEL,contents=prompt)

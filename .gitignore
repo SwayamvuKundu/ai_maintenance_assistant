@@ -7,6 +7,6 @@ vectorstore/db/
 .streamlit/
 .vscode/
 .idea/
-storage/chats/*
+storage/chat/*
 storage/users.json
-!storage/chats/.gitkeep
+!storage/chat/.gitkeep
